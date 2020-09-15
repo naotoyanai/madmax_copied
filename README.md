@@ -1,10 +1,10 @@
-# Intelligent Blocker
+# ELM Blocker 
 
-悪性サイトをブラックリストやドメイン情報から検知し，ユーザが悪性サイトに接するリスクを軽減できるFirefox対応のアドオン機能である．
+MLaaS（Machine Learning as a Service） とFireFoxアドオンを融合した悪性ドメイン検知サービスである.
 
 ## 説明
 
-本アドオンは悪性サイト，またはその可能性が高いサイトをブラックリストや予測機能を用いて解析し，アクセスする前にその旨を通知するものである．これにより，ユーザが悪性サイトに接触するリスクを軽減することができる．本機能のアルゴリズムは以下の[決定木図](https://github.com/akazs/MWS2019_F.SE#%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)で表すことができる．
+本アドオンは悪性サイト，またはその可能性が高いサイトをブラックリストや予測機能を用いて解析し，アクセスする前にその旨を通知するものである．これにより，ユーザが悪性サイトに接触するリスクを軽減することができる．本機能のアルゴリズムは以下の(https://github.com/akazs/MWS2019_F.SE#%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)で表すことができる．
 
 1. ユーザが一時的に許可するユーザホワイトリストにURLが登録済みで，かつ登録から一定期間内であればアクセスを許可する．
 1. 含まれていない場合は，そのURLがブラックリストに含まれている場合にはアクセスの前に警告画面に遷移する．ブラックリストに含まれていない場合はドメイン情報をもとに悪性ドメインの可能性があるかを予測する．
@@ -24,22 +24,22 @@
 
 以下に[インストールのデモアニメーション](https://github.com/akazs/MWS2019_F.SE#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%AE%E3%83%87%E3%83%A2)があるので，説明と一緒に参考にして下さい．
 
-1. 保存したいディレクトリ下で次のコマンドを実行する．`$ git clone https://github.com/akazs/MWS2019_F.SE.git`
+1. 保存したいディレクトリ下で次のコマンドを実行する．`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
 
 1. Firefoxを開き，URLバーに`about:debugging#/runtime/this-firefox`と入力する．
 
 1. 画面内の`一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
 
-1. `Intelligent Blocker`というアドオンが追加されていれば，インストール成功．
+1. `ELM Blocker`というアドオンが追加されていれば，インストール成功．
 
 ### インストールのデモ
 ![][install_demo]
 
-[install_demo]:https://github.com/akazs/MWS2019_F.SE/blob/master/install_demo.gif
+[install_demo]:https://github.com/kzk-IS/MWS2020_adon/blob/master/install_demo.gif
 
 ## 実行のデモ
 
-それぞれのデモでは，対象となるサイトへアクセスする前に警告を出すことに成功している．また，[上記の決定木図](https://github.com/akazs/MWS2019_F.SE#%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)の通り，警告画面を対象サイトごとに変更することに成功している．
+それぞれのデモでは，対象となるサイトへアクセスする前に警告を出すことに成功している．また，(https://github.com/akazs/MWS2019_F.SE#%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)の通り，警告画面を対象サイトごとに変更することに成功している．
 
 ### ブラックリストに載っているドメインの時のデモ
 
