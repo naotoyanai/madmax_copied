@@ -28,7 +28,7 @@ ELM Blocker は次の様な仕組みで動作する.
 
 ![][systemzentai]
 
-[systemzentai]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentai.jpg
+[systemzentai]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentai.png
 
 
 
