@@ -28,10 +28,9 @@ ELM Blocker は次の様な仕組みで動作する.
 （ここにシステム全体像の画像を貼る）
 
 ### 判定アルゴリズム
-![][algorithm]
 
-*要変更
-[algorithm]:https://github.com/akazs/MWS2019_F.SE/blob/master/algorithm.png
+*要変更（決定木みたいなんを貼る）
+[algorithm]:https://github.com/kzk-IS/MWSCUP2020_adon/algorithm.png
 
 ## MLaaS側の仕組みと機械学習モデル（サーバのリポジトリに書く？）
 https://github.com/kzk-IS/MWSCUP2020_server
