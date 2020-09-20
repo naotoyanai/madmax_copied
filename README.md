@@ -33,9 +33,9 @@ MLaaS（Machine Learning as a Service） とFireFoxアドオンを融合した�
 ELM Blocker は次の様な仕組みで動作する.
 
 
-![][systemzentai]
+![][systemzentaizu]
 
-[systemzentai]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentai.png
+[systemzentaizu]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentaizu.jpg
 
 
 
