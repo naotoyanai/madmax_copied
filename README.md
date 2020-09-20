@@ -6,6 +6,16 @@ Webサイトにアクセスする前に自動でドメインを機械学習を�
 
 また, MLaaS（Machine Learning as a Service）の様な外部サービスを利用せずに, 自社の組織に機械学習モデルを搭載した簡易サーバを手軽に設置して利用することができるためプライバシーも守ることができる.
 
+##目次
+・ELM Blockerの機能
+・ELM Blockerの仕組み
+・ELM Blockerの使い方
+・サーバ側の設定について
+・実行のデモ
+・ライセンス
+・開発者
+・アドバイザ
+
 ## ELM Blocker の機能
 
 ELM Blocker はプライバシーを漏らしたくはないが, 機械学習など最先端の技術を用いて悪性サイトの被害からは守られたいという組織で広く利用することができる.
@@ -15,7 +25,7 @@ ELM Blocker はプライバシーを漏らしたくはないが, 機械学習な
 そこで, 最先端の機械学習モデルを搭載したサーバを自組織内に手軽に設置し, それ組織内のどのユーザからもFirefoxのアドオンを通してMLaaSの様に活用できるシステムであるELM Blocker を開発した.
 
 
-## ELM Blocker の仕組み.
+## ELM Blocker の仕組み
 
 ELM Blocker は次の様な仕組みで動作する.
 
@@ -25,12 +35,20 @@ ELM Blocker は次の様な仕組みで動作する.
 
 利用する際には
 
-### 判定アルゴリズム
+## ELM Blocker の使い方
 
-*要変更（決定木みたいなんを貼る）
-[algorithm]:https://github.com/kzk-IS/MWSCUP2020_adon/algorithm.png
+ここでは主にユーザ側の使い方について説明する. サーバ側の設定に関しては
 
-## MLaaS側の仕組みと機械学習モデル（サーバのリポジトリに書く？）
+1. 保存したいディレクトリ下で次のコマンドを実行する．`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
+
+1. Firefoxを開き，URLバーに`about:debugging#/runtime/this-firefox`と入力する．
+
+1. 画面内の`一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
+
+1. `ELM Blocker`というアドオンが追加されていれば，インストール成功．
+
+
+## サーバ側の設定について
 https://github.com/kzk-IS/MWSCUP2020_server
 
 Deny リストでは対処しきれない未知の悪性ドメインを検知するため, 機械学習アルゴリズムを用いた.
@@ -43,32 +61,10 @@ Deny リストでは対処しきれない未知の悪性ドメインを検知す
 
 速度は1アクセスあたりXXX秒, 精度はXXX% である.
 
-## 実行環境(2020/09/25現在)
+## 実行のデモ
 
+実行環境(2020/09/25現在)
 - Firefox(69.0.1)
-
-## インストール
-
-以下に[インストールのデモアニメーション](https://github.com/akazs/MWS2019_F.SE#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%AE%E3%83%87%E3%83%A2)があるので，説明と一緒に参考にして下さい．
-
-1. 保存したいディレクトリ下で次のコマンドを実行する．`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
-
-1. Firefoxを開き，URLバーに`about:debugging#/runtime/this-firefox`と入力する．
-
-1. 画面内の`一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
-
-1. `ELM Blocker`というアドオンが追加されていれば，インストール成功．
-
-### インストールのデモ
-![][install_demo]
-
-[install_demo]:https://github.com/kzk-IS/MWS2020_adon/blob/master/install_demo.gif
-
-### 悪質なサイトである可能性がある時のデモ
-
-我々のアルゴリズムで悪質なサイトである可能性があるドメイン名であると判断されたサイトにアクセスしようとしている時のデモである．
-以下では，`https://fd7fs7fadf7fd.com`という架空のドメインではあるが，我々のアルゴリズムで悪性サイトのドメインであると判断したものへのアクセスを試みている．
-
 
 ## ライセンス
 
