@@ -41,9 +41,9 @@ ELM Blockerでは機械学習モデルを更新することも可能である
 
 1. Firefoxを開き， URLバーに以下を入力
 
-`about:debugging#/runtime/this-firefox`と入力する．
+`about:debugging#/runtime/this-firefox`
 
-1. 画面内の`一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
+1. `一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
 
 1. `ELM Blocker`というアドオンが追加されていれば，インストール成功．
 
