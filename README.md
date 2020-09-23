@@ -33,11 +33,15 @@ ELM Blockerでは機械学習モデルを更新することも可能である
 
 ## ELM Blocker の使い方
 
-ここでは主にユーザ側の使い方について説明する. サーバ側の設定に関しては
+ここでは主にユーザ側の使い方について説明する. サーバ側の設定に関してはサーバの章をご覧いただきたい。
 
-1. 保存したいディレクトリ下で次のコマンドを実行する．`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
+1. githubからアドオンをダウンロードする. 保存したいディレクトリで以下のコマンドを実行する.
 
-1. Firefoxを開き，URLバーに`about:debugging#/runtime/this-firefox`と入力する．
+`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
+
+1. Firefoxを開き， URLバーに以下を入力
+
+`about:debugging#/runtime/this-firefox`と入力する．
 
 1. 画面内の`一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
 
