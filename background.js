@@ -22,13 +22,10 @@ function ouralgorithm(requestDetails) {
               //var result = xhr.statusText;
               var result = xhr.responseText;
               console.log(result);
-              if (Boolean(Number(result))) {
+              if (Boolean(result)) {
               	console.log("ELM detect");
-              	//return　{redirectUrl: u_analysis};
-              	　resolve(u_http);
-              }else{
-              	resolve(null);
               }
+              resolve(result);
             }
           }
         }
