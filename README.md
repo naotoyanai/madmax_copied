@@ -33,7 +33,7 @@ MLaaS（Machine Learning as a Service）の様な外部サービスを用いて�
 
 ここでは主にユーザ側の使い方について説明する. サーバ側の設定に関しては
 
-1. 保存したいディレクトリ下で次のコマンドを実行する．`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
+1. 保存したいディレクトリ下で次のコマンドを実行する．```$ git clone https://github.com/kzk-IS/MWS2020_adon.git```
 
 1. Firefoxを開き，URLバーに`about:debugging#/runtime/this-firefox`と入力する．
 
