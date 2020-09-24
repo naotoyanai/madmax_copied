@@ -1,6 +1,14 @@
 const whitelistname = 'tmpWhitelist'
 const STORAGE = localStorage
 
+function genDomains(url){
+    var splited = url.split('/')[2].split('.');
+    var domains = []
+    for(var i=0;i<splited.length-1;i++)
+        domains.push(splited.slice(i,splited.length).join('.'));
+    return domains;
+}
+
 function search(blacklists,url){
     var keywords = genDomains(url);
     for(var i=0;i<blacklists.length;i++){
