@@ -2,7 +2,7 @@
 
   "description": "Demonstrating webRequests",
   "manifest_version": 2,
-  "name": "Intelligent Blocker",
+  "name": "ELM Blocker",
   "version": "1.0",
 
   "permissions": [
@@ -10,9 +10,8 @@
     "webRequestBlocking",
     "<all_urls>"
   ],
-  "web_accessible_resources" : ["src/foo_http.html","src/foo.html","src/foo_analysis.html"],
+  "web_accessible_resources" : ["src/alert.html"],
   "background": {
-    "scripts": ["./src/search.js","./src/tmpWhitelist.js","./src/blacklist_posibility.js","background.js"]
+    "scripts": ["./src/search.js","./src/tmpWhitelist.js","background.js"]
   }
-
 }

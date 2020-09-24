@@ -37,13 +37,13 @@ ELM Blockerでは機械学習モデルを更新することも可能である
 
 1. githubからアドオンをダウンロードする. 保存したいディレクトリで以下のコマンドを実行する.
 
-`$ git clone https://github.com/kzk-IS/MWS2020_adon.git`
+`$ git clone https://github.com/kzk-IS/MWS2020_addon.git`
 
 1. Firefoxを開き， URLバーに以下を入力
 
 `about:debugging#/runtime/this-firefox`
 
-1. `一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`background.js`を選択して，開く．
+1. `一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し，先ほどcloneしたディレクトリの`manifest.json`を選択して，開く．
 
 1. `ELM Blocker`というアドオンが追加されていれば，インストール成功．
 
@@ -64,7 +64,7 @@ Deny リストでは対処しきれない未知の悪性ドメインを検知す
 ## 実行のデモ
 
 実行環境(2020/09/25現在)
-- Firefox(69.0.1)
+- Firefox(77.0.1)
 
 ## ライセンス
 
