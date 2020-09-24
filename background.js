@@ -22,7 +22,7 @@ function ouralgorithm(requestDetails) {
               //var result = xhr.statusText;
               var result = xhr.responseText;
               console.log(result);
-              if (Boolean(result)) {
+              if (Boolean(parseInt(result, 2))) {
               	console.log("ELM detect");
               }
               resolve(result);
@@ -43,9 +43,10 @@ async function redirect(requestDetails){
         await ouralgorithm(requestDetails).then(function(result){
         	final_result = result
         })
-        console.log(final_result)
+		console.log(final_result)
         if (final_result != null) {
-			if (Boolean(final_result)) {
+			if (Boolean(parseInt(final_result, 2))) {
+				console.log('TEST')
 				return {redirectUrl: redirectDest}
 			}
         }
