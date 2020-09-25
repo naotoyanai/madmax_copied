@@ -23,12 +23,12 @@ MADMAXの構成要素としては大きく分けて、ユーザ側のFirefox-ADD
 
 サーバの中ではドメインから特徴量を抽出して、予測モデルに入力として与えることにより、その出力として予測結果を得る。予測モデルは開発者によって最新のデータセットで訓練したモデルに更新することが可能であり、継続的に未知の脅威に対応することが可能である。ここでいう更新内容とは、ELMモデルで用いる学習済みパラメータのことであり、その実態であるjson形式のファイルをサーバに送信することで学習モデルの更新をすることができる。
 
-## ELM Blocker の使い方
+## MADMAX の使い方
 
 ユーザ側の使い方について説明する。
 
 1. githubからアドオンをダウンロードする. 保存したいディレクトリで以下のコマンドを実行する.
-```$ git clone https://github.com/kzk-IS/MWS2020_addon.git```
+```$ git clone https://github.com/kzk-IS/MWSCUP2020_addon.git```
 
 1. FirefoxのURLバーに`about:debugging#/runtime/this-firefox`と入力。
 
