@@ -30,11 +30,11 @@ MADMAXの構成要素としては大きく分けて、ユーザ側のFirefox-ADD
 1. githubからアドオンをダウンロードする. 保存したいディレクトリで以下のコマンドを実行する.
 ```$ git clone https://github.com/kzk-IS/MWS2020_addon.git```
 
-1. Firefoxを開き， URLバーに`about:debugging#/runtime/this-firefox`と入力
+1. FirefoxのURLバーに`about:debugging#/runtime/this-firefox`と入力。
 
 1. `一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し、アドオンをダウンロードしたディレクトリ内の`manifest.json`を選択する。
 
-1. `MADMAX`というアドオンが追加されていれば，インストール成功．
+1. `MADMAX`というアドオンが追加されていればインストール成功。
 
 
 ## サーバ側の設定について
@@ -53,7 +53,13 @@ Deny リストでは対処しきれない未知の悪性ドメインを検知す
 ・ELMの学習のため、実データセットを新しく作成した。本アプリケーション・データセットにおいてドメインから抽出する特徴量は、文字列構造ベースの特徴、IPベースの特徴、whoisベースの特徴、TTLベースの特徴である。これらによって、大まかにはDomain Generation Algorithmで生成される様なドメインの構造学習や攻撃用に短期間のみ有効となる様なドメインの特徴の学習を行っている。データセットの規模は悪性サイトと良性サイトもがそれぞれ1000件である。これを用いて学習を行い性能を測るため交差検証を行った結果、精度は90.1%であった。
 
 
-## 実行のデモ
+## 悪性ドメイン検知時の警告
+
+MADMAXが悪性ドメインを検知した際には、ユーザのブラウザ上で以下の様な警告画面が表示される。
+
+![][keikoku]
+
+[keikoku]:https://github.com/kzk-IS/MWS2020_adon/blob/master/keikoku.png
 
 実行環境(2020/09/25現在)
 - Firefox(77.0.1)
