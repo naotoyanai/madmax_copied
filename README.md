@@ -1,8 +1,7 @@
 # ELM Blocker 
 
-Firefoxアドオンとして利用できる, ユーザのプライバシーを保護しながら機械学習モデルを活用する悪性ドメイン検知システムである.
 
-悪性サイト被害防止のため機械学習など最先端の技術を利用したいが, 第三者に情報を漏洩したくないという組織で広く利用することが可能.
+
 
 ## 機能
 
@@ -18,9 +17,9 @@ MLaaS（Machine Learning as a Service）の様な外部サービスを用いて�
 
 利用する際には, システム管理者が自組織内の任意の場所に簡易サーバ(1GBあれば十分である.)を設置し, 自組織内のユーザの端末にFirefox ADD-ONSをインストールしてもらう.
 
-![][systemzentaizu]
+![][fig_system]
 
-[systemzentaizu]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentaizu.jpg
+[fig_system]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentaizu.jpg
 
 ユーザがブラウザ上でサイトにアクセスしようとした際, アドオンが自動で悪性サイト検知処理を行う. アドオン上のアルゴリズムとしては単純で, サイトのURLから切り出したドメインを予測サーバに入力クエリとして送信し, その予測結果を元に悪性であれば警告画面を表示し注意喚起を促す. 以前にアクセスしたサイトや悪性の疑いがあってもアクセスが許可されているサイトはユーザホワイトリストとして保持しておき, サーバを介せずにアクセスする. 
 
@@ -77,6 +76,7 @@ Deny リストでは対処しきれない未知の悪性ドメインを検知す
 - [nanana710](https://github.com/nanana710)
 - [han9umeda](https://github.com/han9umeda)
 - [takemr](https://github.com/takemr)
+- [flabrei926](https://github.com/flabrei926)
 
 ### アドバイザー
 
