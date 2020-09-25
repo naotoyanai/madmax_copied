@@ -19,7 +19,7 @@ MLaaS（Machine Learning as a Service）の様な外部サービスを用いて�
 
 ![][fig_system]
 
-[fig_system]:https://github.com/kzk-IS/MWS2020_adon/blob/master/systemzentaizu.jpg
+[fig_system]:https://github.com/kzk-IS/MWS2020_adon/blob/master/fig_system.jpg
 
 ユーザがブラウザ上でサイトにアクセスしようとした際, アドオンが自動で悪性サイト検知処理を行う. アドオン上のアルゴリズムとしては単純で, サイトのURLから切り出したドメインを予測サーバに入力クエリとして送信し, その予測結果を元に悪性であれば警告画面を表示し注意喚起を促す. 以前にアクセスしたサイトや悪性の疑いがあってもアクセスが許可されているサイトはユーザホワイトリストとして保持しておき, サーバを介せずにアクセスする. 
 
