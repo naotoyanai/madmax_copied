@@ -59,7 +59,7 @@ Firefox(80.0.1)で正常に動作することが確認されている。
 
 ## ライセンス
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[MIT](https://opensource.org/licenses/mit-license.php)
 
 ## 製作者
 
