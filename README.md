@@ -1,67 +1,70 @@
 # MADMAX 
 
-MADMAX：MAchine learning-baseD MAlicious domain eXhauster はユーザにとって快適な処理時間で自動的に悪性ドメイン判定を行うアプリケーションである。ユーザはFirefox-ADDONS をインストールするだけで手軽に利用することができる。
+MADMAX: MAchine learning-baseD MAlicious domain eXhauster is an application that automatically determines malicious domains rapidly. A user can install Firefox-addons to use MADMAX.
 
-## 機能
+## Functions
 
-ユーザがサイトにアクセスする際に、URL中に含まれるドメインが悪性か良性であるかを高速予測が可能な機械学習モデルELM（Extreme Learning Machine）を用いて判定を行う。
-悪性ドメインであると判定された場合は警告画面を表示してユーザに対して注意喚起を行う。
+When a user accesses a site, the ELM (Extreme Learning Machine), a machine learning model capable of high-speed prediction, is used to determine whether the domain contained in the URL is malicious or benign.
+If a domain is determined to be malicious, a warning screen is displayed to alert the user.
 
-機械学習を利用することにより、Denyリストを用いた検知手法では対応できない未知の脅威からユーザを守ることが可能である。
+By using machine learning, it is possible to protect users from unknown threats that cannot be handled by detection methods using deny lists.
 
-予測モデルは開発者が構築したサーバ内で動作しており、ユーザはアドオンをインストールすれば意識することなくこの高精度・高速な悪性ドメイン予測のサービスを受けることができる。この手軽さによって普及が期待でき、セキュアな世の中の実現の第一歩となる。
+The prediction model runs in a server built by the developer, and users can install an add-on to receive this highly accurate and fast malicious domain prediction service without being aware of it. This ease of use is expected to lead to widespread use of this service, and will be the first step toward realizing a secure world.
 
-## アプリケーション全体図
 
-MADMAXの構成要素としては大きく分けて、ユーザ側のFirefox-ADDONSとサーバ側の予測モデルの2つである。
+
+## Overview
+
+MADMAX consists of Firefox-addons for users and a prediction model for a sever. 
 
 ![][fig_system]
 
 [fig_system]:https://github.com/kzk-IS/MWS2020_adon/blob/master/fig_system.jpg
 
-ユーザがブラウザ上でサイトにアクセスしようとした際、アドオンが自動で悪性サイト検知処理を行う。アドオン上のアルゴリズムとしては単純で、サイトのURLから切り出したドメインを予測サーバに入力クエリとして送信し、その予測結果を元に悪性であれば警告画面を表示し注意喚起を促す。（以前に悪性の疑いがあると判定されたとしても、アクセスが許可されているサイトはユーザホワイトリストとして保持しておき、サーバを介せずにアクセスする。） 
+When a user tries to access a site on a browser, the add-on automatically performs malicious site detection. The add-on's algorithm is simple: it sends a domain extracted from the site's URL to the prediction server as an input query, and if the site is malicious according to the prediction results, a warning screen is displayed to alert the user. (Even if the site has been previously determined to be malicious, the site to which access is permitted is kept as a user white list and accessed without going through the server.) 
 
-サーバの中ではドメインから特徴量を抽出して、予測モデルに入力として与えることにより、その出力として予測結果を得る。予測モデルは開発者によって最新のデータセットで訓練したモデルに更新することが可能であり、継続的に未知の脅威に対応することが可能である。ここでいう更新内容とは、ELMモデルで用いる学習済みパラメータのことであり、その実態であるjson形式のファイルをサーバに送信することで学習モデルの更新をすることができる。
+In the server, features are extracted from the domain and given as input to the prediction model to obtain prediction results as its output. The prediction model can be updated by the developer to a model trained on the latest data set, allowing it to continuously respond to unknown threats. The updated content refers to the trained parameters used in the ELM model, and the training model can be updated by sending the json format file, which is the actual state of the model, to the server.
 
-## MADMAX の使い方
 
-ユーザ側の使い方について説明する。
 
-1. githubからアドオンをダウンロードする. 保存したいディレクトリで以下のコマンドを実行する.
+## How to Use MADMAX
+
+For the user-side, 
+
+1. Download the addons from github and type the following command in the directory: 
 ```$ git clone https://github.com/kzk-IS/MWSCUP2020_addon.git```
 
-1. FirefoxのURLバーに`about:debugging#/runtime/this-firefox`と入力。
+1. Input `about:debugging#/runtime/this-firefox` in Firefox's URL bar.
 
-1. `一時的なアドオン読み込み中...`(for English ver. `Load Temporary Add-on...`)ボタンを押し、アドオンをダウンロードしたディレクトリ内の`manifest.json`を選択する。
-
-1. `MADMAX`というアドオンが追加されていればインストール成功。
+1. Push the `Load Temporary Add-on...` button and choose `manifest.json` in the directory. 
 
 
-## サーバ側について
+1. Suceed in installing if you can see `MADMAX` in the addons. 
 
-サーバの中身やその詳細については以下のリポジトリに記載している。
+
+## For the server-side, the detail of the server-side functions are described in the following repository (in Japanese): 
 
 https://github.com/kzk-IS/MWSCUP2020_server
 
-サーバに搭載している予測モデルの機械学習アルゴリムELMは、隠れ層をひとつ持つニューラルネットワークの一種である。開発者が収集したドメインベースの特徴量で構成されたデータセットを利用して学習された精度90.1%のELMモデルが動作している。
+ELM used in the prediction model on the server is a kind of neural networks. When we checked the performance of MADMAX, the accuracy was 90.1% with our dataset described in the MADMAX paper. 
 
 
-## 悪性ドメイン検知時の警告
+## Alerts of Malicous Domain Detection
 
-MADMAXが悪性ドメインを検知した際には、ユーザのブラウザ上で以下の様な警告画面が表示される。
+When MADMAX detects a malicious domain, the following warning screen is displayed on the user's browser.
 
 ![][keikoku]
 
 [keikoku]:https://github.com/kzk-IS/MWS2020_adon/blob/master/keikoku.png
 
-Firefox(80.0.1)で正常に動作することが確認されている。
+You can use MADMAX on Firefox(80.0.1). 
 
 
-## ライセンス
+## Licens
 
 [MIT](https://opensource.org/licenses/mit-license.php)
 
-## 製作者
+## Contributors
 
 - [kzk-IS](https://github.com/kzk-IS)
 - [akazs](https://github.com/akazs)
@@ -69,7 +72,3 @@ Firefox(80.0.1)で正常に動作することが確認されている。
 - [han9umeda](https://github.com/han9umeda)
 - [takemr](https://github.com/takemr)
 - [flabrei926](https://github.com/flabrei926)
-
-### アドバイザー
-
-[矢内直人(大阪大学 大学院情報科学研究科 セキュリティ工学講座(藤原研究室) 助教)](http://www-infosec.ist.osaka-u.ac.jp/~yanai/)
